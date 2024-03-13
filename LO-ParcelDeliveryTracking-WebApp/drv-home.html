@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Parcel Delivery Tracking</title>
+    <link  rel="stylesheet"  href="styles/global.css"  type="text/css"/>
+    <link  rel="stylesheet"  href="styles/drv-styles.css"  type="text/css"/>
+
+    <script src="https://kit.fontawesome.com/5903e24044.js" crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="scripts/app-js/config.js"></script>
+    <script src="scripts/app-js/showPageSetter.js"></script>
+    <script src="scripts/app-js/users/userDetails.js"></script>
+</head>
+<body>
+    <div id="drv-header"></div>
+
+    <main class="content">
+        <h1>Hello Driver</h1>
+        <div id="account-details"></div>
+    </main>
+    
+</body>
+
+<script>
+    getUserDetails();
+</script>
+<script>
+    const linksForLandingPage = [
+        { text: 'Parcels', url: '#' },
+        { text: 'Deliveries', url: '#' },
+    ];
+    const isLoggedIn = true;
+    const landingPageHeader = createHeader(linksForLandingPage, isLoggedIn);
+    
+    document.getElementById("drv-header").appendChild(landingPageHeader);
+</script>
+</html>

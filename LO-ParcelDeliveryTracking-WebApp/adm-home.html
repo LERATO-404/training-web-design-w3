@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Parcel Delivery Tracking</title>
+    <link  rel="stylesheet"  href="styles/global.css"  type="text/css"/>
+    <link  rel="stylesheet"  href="styles/adm-styles.css"  type="text/css"/>
+
+    <script src="https://kit.fontawesome.com/5903e24044.js" crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="scripts/app-js/config.js"></script>
+    <script src="scripts/app-js/showPageSetter.js"></script>
+    <script src="scripts/app-js/users/userDetails.js"></script>
+    <script src="scripts/app-js/parcels/showParcels.js"></script>
+</head>
+<body>
+    <div id="adm-header"></div>
+
+    <main class="content">
+        <div class="admin-info">
+            <div id="hello"></div>
+            <div id="account-details" class="user-details"></div>
+        </div>
+        
+        <div class="parcels">
+            <div>
+                <label for="statusDropdown">Filter by Status:</label>
+                <select id="statusDropdown">
+                    <option value="All">All</option>
+                    <option value="InTransit">In Transit</option>
+                    <option value="Delivered">Delivered</option>
+                    <option value="OnHold">On Hold</option>
+                </select>
+            </div>        
+            <div id="allParcels">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Parcel ID</th>
+                            <th>Weight</th>
+                            <th>Parcel Status</th>
+                            <th>Schedule Date</th>
+                            <th>Additional Notes</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody id="parcelTableBody"></tbody>
+                </table>
+            </div>
+        </div>
+        
+        
+    </main>
+</body>
+
+<script>
+    getUserDetails();
+    getUserFullName();
+</script>
+<script>
+    document.getElementById('menuButton').addEventListener('click', toggleMenuLinks);
+</script>
+<script>
+    onDropdownChange();
+    document.getElementById('statusDropdown').addEventListener('change', onDropdownChange);
+</script>
+<script>
+    const linksForLandingPage = [
+        { text: 'Personnel', url: '#' },
+        { text: 'Parcels', url: '#' },
+        { text: 'Deliveries', url: '#' },
+    ];
+    const isLoggedIn = true;
+    const landingPageHeader = createHeader(linksForLandingPage, isLoggedIn);
+    //const footer = createFooter();
+
+    document.getElementById("adm-header").appendChild(landingPageHeader);
+    //document.getElementById('footer-container').appendChild(footer);
+</script>
+</html>

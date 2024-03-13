@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Parcel Delivery Tracking</title>
+
+    <link  rel="icon"  type="image/x-icon"  href="favicon.ico"  />
+    <!--  icons  from  fontawesome.io  -->
+    <link  href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"  rel="stylesheet"  />
+
+    <link  rel="preconnect"  href="https://fonts.googleapis.com"  />
+    <link  rel="preconnect"  href="https://fonts.gstatic.com"  crossorigin  />
+    <link  href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap"  rel="stylesheet"  />
+    <link  rel="stylesheet"  href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap.min.css"
+        integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"  crossorigin="anonymous"  />
+
+    <link  rel="stylesheet"  href="styles/global.css"  type="text/css"/>
+    <script src="https://kit.fontawesome.com/5903e24044.js" crossorigin="anonymous"></script>
+    <script  src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script  src="scripts/app-js/config.js"></script>
+    <script  src="scripts/app-js/showPageSetter.js"></script>
+</head>
+<body>
+    <div id="header-container"></div>
+
+    <div class="row">
+        <div class="content ">
+            <h1>Parcel Delivery Tracking</h1>
+            <p>Effortless Parcel Tracking and Delivery Services</p>
+            <p>Discover a smarter way to manage your parcels. Our platform simplifies parcel tracking, delivery scheduling, and more. Experience the future of parcel delivery.</p>
+            <div>
+                <button type="button" id="signInBeginBtn" href="src/login/sign-in.html"><span></span>Sign In & Begin</button>
+            </div>
+        </div>
+        
+        <div class="content">
+            <div class="card card1"></div>
+            <div class="card card2"></div>
+            <div class="card card3"></div> 
+            <div class="card card4"></div>  
+        </div>
+    </div>
+
+    <div id="footer-container"></div>
+</body>
+
+<script>
+    signInAndBegin();
+</script>
+<script>
+    const linksForLandingPage = [
+        { text: 'Home', url: 'index.html' },
+        { text: 'About', url: '#' },
+        { text: 'Services', url: '#' },
+    ];
+    const isLoggedIn = false;
+    const landingPageHeader = createHeader(linksForLandingPage,isLoggedIn);
+    const footer = createFooter();
+
+    document.getElementById("header-container").appendChild(landingPageHeader);
+    document.getElementById('footer-container').appendChild(footer);
+</script>
+
+</html>
